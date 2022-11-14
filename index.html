@@ -8,20 +8,23 @@
 </head>
 <body>
     <script>
-        function padString(String, number, symbol){
+        function padString(String, number, symbol, flag){
           var num = String.length;
-          var b = '';
-            if(num>=number){
-            console.log(String);
-              }else{
+          var c = 'right';
+            if(num<=number) {
                 for(var i = num; i>=num && i<number; i++) {
-                b+=symbol;
-            }
-            console.log(String+b);
-            console.log(b+String);
-        }}
+                  if(flag!==c) {
+                    String = symbol+String;
+                  }else {
+                String+=symbol;
+            }} return String;
+          }else{
+            return String;
+          }
+        }
 
-        padString("Hello, Sergiy!", 15, "!");
+        let result = padString("Max", 6, "*", 'left');
+        console.log(result);
 
     </script>
 </body>
